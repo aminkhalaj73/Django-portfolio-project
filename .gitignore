@@ -12,7 +12,7 @@ local_settings.py
 db.sqlite3
 /media
 /static
-
+*.vscode
 
 ### Django.Python Stack ###
 # Byte-compiled / optimized / DLL files

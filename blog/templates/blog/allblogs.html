@@ -4,13 +4,14 @@
 
 <!doctype html>
 <html lang="en">
+  {% load staticfiles %}
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Album example · Bootstrap</title>
+    <title>My Blog</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -32,15 +33,15 @@
     <body>
 <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Amin Khalaj</a>
+            <a class="navbar-brand" href="{% url 'home' %}">Amin Khalaj</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link" href="#">Instagram</a>
-                <a class="nav-item nav-link" href="#">Resume</a>
-                <a class="nav-item nav-link active" href="#">Blog</a>
+                <a class="nav-item nav-link" href="ttps://www.instagram.com/_m.r_amin/">Instagram</a>
+                <a class="nav-item nav-link" href="{% static 'resume1.pdf' %}">Resume</a>
+                <a class="nav-item nav-link active" href="{% url 'allblogs' %}">Blog</a>
               </div>
             </div>
         </nav>
@@ -48,20 +49,21 @@
 
 <main role="main">
     <div class="container">
-        <h1 class="text-center pt-3">Welcome to my blog</h1>
+        <h1 class="text-center pt-3">It's my Blog</h1>
         <br/>
         <br/>
         <h2>Latest posts</h2>
         <hr/>
         {% for blog in blogs.all %}
-        <div class="media">
+        <div class="media">{% block image %}
                 <a href="{{ blog.image.url }}" >
                     <img class="img-fluid rounded" src="{{ blog.image.url }}" class="mr-3" width = "150px"/>
                 </a>
+                {% endblock %}
                 <div class="media-body ml-2">
-                    <a href="">
+                    <a href="{% url 'detail' blog.id %}">
                   <h5 class="mt-0">{{ blog.title }}</h5></a>
-                  {{blog.summary}} ...... <a href="">+</a>
+                  {{blog.summary}} ...... <br\><a href="{% url 'detail' blog.id %}">Read more</a>
                 </div>
                 <time>{{blog.pub_date_pretty}}</time>
               </div>

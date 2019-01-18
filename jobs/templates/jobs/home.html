@@ -2,13 +2,14 @@
 
 <!doctype html>
 <html lang="en">
+  {% load staticfiles %}
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Album example · Bootstrap</title>
+    <title>©Amin</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -30,15 +31,15 @@
     <body>
 <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Amin Khalaj</a>
+            <a class="navbar-brand" href="{% url 'home' %}">Amin Khalaj</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link" href="#">Instagram</a>
-                <a class="nav-item nav-link" href="#">Resume</a>
-                <a class="nav-item nav-link" href="#">Blog</a>
+                <a class="nav-item nav-link" href="https://www.instagram.com/_m.r_amin/">Instagram</a>
+                <a class="nav-item nav-link" href="{% static 'resume1.pdf' %}">Resume</a>
+                <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
               </div>
             </div>
         </nav>
@@ -47,12 +48,13 @@
 <main role="main">
 
   <section class="jumbotron text-center">
-    <div class="container">
+    <div class="container" >
       <h1 class="jumbotron-heading">Hi , I'm Mohammad Amin Khalaj</h1>
-      <p class="lead text-muted">Hello and Welcome to my website . I developed this website on python django framework and my goal by developing this website was to demonstrate my skills in django :) so please contact me if you like to developing one by your own , I can teach you !</p>
+      <p class="lead text-muted font-italic">Hello and Welcome to my website . I developed this website on python django framework and my goal by developing this website was to demonstrate my skills in django :) so please contact me if you like to developing one by your own , I can teach you !</p>
       <p>
         <a href="mailto:mohammad.a.khalaj@gmail.com?subject=Portfolio project" class="btn btn-primary my-2">Email Me</a>
       </p>
+      <img src="{% static 'Amin.jpg' %}" class="image-fluid rounded-circle" height="250px" />
     </div>
   </section>
 

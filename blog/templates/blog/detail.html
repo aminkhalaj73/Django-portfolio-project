@@ -1,3 +1,17 @@
+{% extends 'base.html' %}
 
+{% block title1 %}
+{{ details.title }}
+{% endblock %}
 
+{% block image %}
+{{ details.image.url }}
+{% endblock %}
+
+{% block body %}
 {{ details.body }}
+{% endblock %}
+
+{% block time %}
+{{ details.pub_date_pretty }}
+{% endblock %}
